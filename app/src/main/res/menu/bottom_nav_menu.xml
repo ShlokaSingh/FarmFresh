@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+    android:id="@+id/bottom_nav_dashboard"
+    android:title="Orders"
+    android:icon="@drawable/courier"
+    app:cnb_backgroundColor = "@color/orders"
+    />
+    <item
+        android:id="@+id/bottom_nav_manage"
+        android:title="Manage"
+        android:icon="@drawable/manage"
+        app:cnb_backgroundColor = "@color/manage"
+        />
+    <item
+        android:id="@+id/bottom_nav_records"
+        android:title="Records"
+        android:icon="@drawable/records"
+        app:cnb_backgroundColor = "@color/records"
+        />
+</menu>

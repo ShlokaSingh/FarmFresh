@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004D40</color>
+    <color name="colorPrimaryDark">#00251A</color>
+    <color name="colorAccent">#39796B</color>
+    <color name="btnSignUp">#39796B</color>
+    <color name="order_detail">#007D82</color>
+    <color name="orders">#CCFFFF</color>
+    <color name="manage">#FFCCCB</color>
+    <color name="records">#CCFFCC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="inventory">#cc0e74</color>
+</resources>

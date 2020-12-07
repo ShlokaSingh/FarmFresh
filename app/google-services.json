@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29978363574",
+    "project_id": "farmfresh-d1aa5",
+    "storage_bucket": "farmfresh-d1aa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29978363574:android:f0faae6b78c7be565d4817",
+        "android_client_info": {
+          "package_name": "com.example.farmfresh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29978363574-vr023h7udttrs1smht7f4oqvs57o7tbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcctK4FHY13DYu58f4e6fRq73IXVTQ2os"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29978363574-vr023h7udttrs1smht7f4oqvs57o7tbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
