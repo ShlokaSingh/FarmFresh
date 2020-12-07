@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/log_out"
+        android:title="Logout"
+        app:showAsAction="withText"
+        />
+    <item
+        android:id="@+id/track_order"
+        android:icon="@drawable/tracking"
+        android:title="Track Order"
+        app:showAsAction="withText"
+        />
+</menu>
