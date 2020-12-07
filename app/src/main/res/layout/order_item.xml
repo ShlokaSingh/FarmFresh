@@ -14,70 +14,107 @@
 
 
     <ImageView
-        android:id="@+id/all_menu_image"
+        android:id="@+id/ivimage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="251dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/all_menu_name"
+        app:layout_constraintEnd_toStartOf="@+id/tvTotal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/b1" />
 
     <TextView
-        android:id="@+id/all_menu_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="196dp"
-        android:layout_marginRight="196dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/all_menu_qty"
-        app:layout_constraintEnd_toStartOf="@+id/all_menu_price"
-        app:layout_constraintStart_toEndOf="@+id/all_menu_image"
+        android:id="@+id/tvName"
+        android:layout_width="60dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="39dp"
+        android:text="Product Name"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrice"
+        app:layout_constraintStart_toStartOf="@+id/ivimage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/all_menu_unit"
-        android:layout_width="41dp"
+        android:id="@+id/tvQty"
+        android:layout_width="20dp"
         android:layout_height="21dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="140dp"
         android:gravity="center"
-        android:text="unit"
+        android:hint="qty"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/all_menu_qty"
-        app:layout_constraintStart_toEndOf="@+id/all_menu_qty"
-        app:layout_constraintTop_toTopOf="@+id/all_menu_qty"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toStartOf="@+id/tvTotal"
+        app:layout_constraintStart_toStartOf="@+id/ivimage"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <TextView
-        android:id="@+id/all_menu_qty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="qty"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/all_menu_name"
-        app:layout_constraintTop_toBottomOf="@+id/all_menu_name" />
+        android:id="@+id/tvqty"
+        android:layout_width="30dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="8dp"
+        android:text="Qty:"
+        app:layout_constraintStart_toStartOf="@+id/ivimage"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <TextView
-        android:id="@+id/all_menu_price"
+        android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="18dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="166"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/all_menu_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/ivimage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.507" />
+
+    <TextView
+        android:id="@+id/tvprice"
+        android:layout_width="38dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Price:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivimage"
+        app:layout_constraintTop_toBottomOf="@+id/tvqty" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="38dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginBottom="8dp"
+        android:hint="Price"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvdiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:text="Discount:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvQty"
+        app:layout_constraintStart_toStartOf="@+id/ivimage" />
+
+    <TextView
+        android:id="@+id/tvDiscount"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="265dp"
+        android:hint="d"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvdiscount"
+        app:layout_constraintStart_toStartOf="@+id/ivimage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

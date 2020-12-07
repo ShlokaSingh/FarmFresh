@@ -123,7 +123,7 @@
             android:id="@+id/addproduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UPDATE"
+            android:text="Add Product"
             android:background="#000"
             android:textColor="#fff"
             android:fontFamily="@font/baloo"

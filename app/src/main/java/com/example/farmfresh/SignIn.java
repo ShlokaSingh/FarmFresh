@@ -3,12 +3,16 @@ package com.example.farmfresh;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.farmfresh.admin.Admin;
 import com.example.farmfresh.user.menu;
@@ -21,9 +25,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class SignIn extends AppCompatActivity {
 
@@ -52,7 +53,7 @@ public class SignIn extends AppCompatActivity {
                 RadioButton rb = (RadioButton) group.findViewById(checkedId);
                 if (null != rb) {
                     choice = rb.getText().toString();
-                    Toast.makeText(getApplicationContext(), rb.getText(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.example.farmfresh.SignIn.this, rb.getText(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -80,13 +81,14 @@ public class SignIn extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         if(dataSnapshot.getValue() != null){
-                                            Toast.makeText(getApplicationContext(), "Sign In successful ", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(com.example.farmfresh.SignIn.this, "Sign In successful ", Toast.LENGTH_SHORT).show();
                                             Intent AdminMenu =new Intent(getApplicationContext(), menu.class);
                                             startActivity(AdminMenu);
+                                            finish();
                                         }
                                         else{
                                             firebaseAuth.signOut();
-                                            Toast.makeText(getApplicationContext(), "Sign In failed", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(com.example.farmfresh.SignIn.this, "Sign In failed", Toast.LENGTH_SHORT).show();
                                         }
                                     }
 
@@ -110,13 +112,14 @@ public class SignIn extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         if(dataSnapshot.getValue() != null){
-                                            Toast.makeText(getApplicationContext(), "Sign In successful ", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(com.example.farmfresh.SignIn.this, "Sign In successful ", Toast.LENGTH_SHORT).show();
                                             Intent AdminMenu =new Intent(getApplicationContext(), Admin.class);
                                             startActivity(AdminMenu);
+                                            finish();
                                         }
                                         else{
                                             firebaseAuth.signOut();
-                                            Toast.makeText(getApplicationContext(), "Sign In failed", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(com.example.farmfresh.SignIn.this, "Sign In failed", Toast.LENGTH_SHORT).show();
                                         }
                                     }
 
@@ -130,7 +133,7 @@ public class SignIn extends AppCompatActivity {
                         }
                     });
                 } else{
-                    Toast.makeText(getApplicationContext(), "Select your role", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.example.farmfresh.SignIn.this, "Select your role", Toast.LENGTH_SHORT).show();
                 }
 
 

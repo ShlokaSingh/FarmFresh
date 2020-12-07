@@ -7,6 +7,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.example.farmfresh.R;
 import com.example.farmfresh.admin.adapter.AllInventoryAdapter;
 import com.example.farmfresh.admin.model.ProductModel;
@@ -16,13 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.storage.FirebaseStorage;
 
 public class Inventory extends AppCompatActivity {
 
@@ -61,7 +63,7 @@ public class Inventory extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), ManageFragment.class);
+                Intent i = new Intent(Inventory.this, ManageFragment.class);
                 startActivity(i);
                 finish();
             }
@@ -83,6 +85,7 @@ public class Inventory extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), AddProductActivity.class);
                 intent.putExtra("category", categoryName);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -99,10 +102,6 @@ public class Inventory extends AppCompatActivity {
                 categoryName  = i.getStringExtra("id");
 
                 productList = new ArrayList<>();
-//                ProductModel product = new ProductModel();
-                //Product ke sare attributes set karna hai
-//                productList.add(product);
-//                setFruitRecycler(productList);
 
                 productList.clear();
                 int count = 0;
@@ -110,18 +109,14 @@ public class Inventory extends AppCompatActivity {
                     ProductModel product = menuSnapshot.getValue(ProductModel.class);
                     productList.add(product);
                     count++;
-//                    if(count >= dataSnapshot.getChildrenCount()) {
-//                        menuProgressBar.setVisibility(View.GONE);
-//                    }
                 }
                 inventoryRecycler.setHasFixedSize(true);
-//                inventoryRecycler.setLayoutManager(new LinearLayoutManager(context));
-                Log.d("shloka", "Set Recycler");
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                 inventoryRecycler.setLayoutManager(layoutManager);
                 allInventoryAdapter = new AllInventoryAdapter(getApplicationContext(), productList, categoryName);
                 inventoryRecycler.setAdapter(allInventoryAdapter);
                 totalNumberOfProduct = productList.size();
+
             }
 
             @Override

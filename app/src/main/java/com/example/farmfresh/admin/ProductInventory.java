@@ -11,15 +11,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.farmfresh.R;
 import com.example.farmfresh.admin.model.ProductModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class ProductInventory extends AppCompatActivity {
+public class ProductInventory extends AppCompatActivity  {
     ImageView ivimage;
     EditText etName, etDescription, etPrice, etQuantity, etAvailability, etDiscount;
     Button update;
@@ -64,18 +64,6 @@ public class ProductInventory extends AppCompatActivity {
         image = Uri.parse(i.getStringExtra("image"));
 
         productNode = database.getReference().child("Category").child(category).child(id);
-
-        Log.d("shloka",id);
-        Log.d("shloka", category);
-        Log.d("shloka", name);
-        Log.d("shloka", description);
-        Log.d("shloka", qty);
-        Log.d("shloka", String.valueOf(price));
-        Log.d("shloka", availability);
-        Log.d("shloka", discount);
-        Log.d("shloka", String.valueOf(image));
-
-
         etName.setText(name);
         etDescription.setText(description);
         etQuantity.setText(qty);
@@ -103,6 +91,7 @@ public class ProductInventory extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Inventory.class);
                 intent.putExtra("id", category);
                 startActivity(intent);
+                finish();
 
             }
         });

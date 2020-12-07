@@ -7,14 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.farmfresh.R;
-import com.example.farmfresh.admin.IndividualOrder;
-import com.example.farmfresh.user.model.OrderModel;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import com.example.farmfresh.admin.IndividualOrder;
+import com.example.farmfresh.R;
+import com.example.farmfresh.user.model.OrderModel;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
     Context context;
@@ -30,7 +30,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.orders_list, parent, false);
 
-        return new OrderViewHolder(view);
+        return new OrderAdapter.OrderViewHolder(view);
     }
 
     @Override
@@ -51,6 +51,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
                 i.putExtra("price",orderList.get(position).getAmount());
                 i.putExtra("phone",orderList.get(position).getPhone());
                 context.startActivity(i);
+                //finish();
             }
         });
     }

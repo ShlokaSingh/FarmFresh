@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent SignUp=new Intent(getApplicationContext(), Admin.class);
                 startActivity(SignUp);
+                finish();
             }
         });
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent SignIn=new Intent(getApplicationContext(), SignIn.class);
                 startActivity(SignIn);
+                finish();
             }
         });
 
